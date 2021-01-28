@@ -4,12 +4,18 @@ const { gmailConfig } = require('./config/mail-config');
 const { messageBuilder } = require('./message-builder');
 const { mailSender } = require('./mail-sender');
 
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+const delay = 5000;
 
 const main = async () => {
   try {
     const message = await messageBuilder.fromFile('./resources/message-data.json');
-    mailSender.send(gmailConfig, message);
-  } catch(error) {
+
+    while (true) {
+      mailSender.send(gmailConfig, message);
+      await sleep(delay);
+    }
+  } catch (error) {
     console.log(error);
   }
 };
