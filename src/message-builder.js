@@ -7,7 +7,6 @@ const fromFile = async (filename) => {
   return JSON.parse(data);
 }
 
-
 exports.messageBuilder = {
   fromFile
 };

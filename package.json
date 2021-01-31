@@ -10,7 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "nodemailer": "6.4.17"
+    "nodemailer": "6.4.17",
+    "winston": "^3.3.3"
   },
   "devDependencies": {},
   "engines": {

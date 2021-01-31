@@ -3,9 +3,10 @@ const nodemailer = require('nodemailer');
 const { gmailConfig } = require('./config/mail-config');
 const { messageBuilder } = require('./message-builder');
 const { mailSender } = require('./mail-sender');
+const { logger } = require('./logger');
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
-const delay = 5000;
+const delay = 60 * 1000;
 
 const main = async () => {
   try {
@@ -16,7 +17,7 @@ const main = async () => {
       await sleep(delay);
     }
   } catch (error) {
-    console.log(error);
+    logger.error(error.message);
   }
 };
 
