@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 const { gmailConfig } = require('./config/mail-config');
 const { messageBuilder } = require('./message-builder');
 const { mailSender } = require('./mail-sender');
+const { authorize } = require('./gmail-authorizer');
 const { logger } = require('./logger');
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
