@@ -1,12 +1,12 @@
 const nodemailer = require('nodemailer');
 const { logger } = require('./logger');
 
-
 const send = async (config, message) => {
-  const transporter = nodemailer.createTransport(config);
+  const { senderConfig, receiverConfig } = config;
+  const transporter = nodemailer.createTransport(senderConfig);
   const options = {
-    from: config.auth.user,
-    to: "rsud@padangpariamankab.go.id",
+    from: senderConfig.auth.user,
+    to: receiverConfig.mail,
     subject: message.subject,
     text: message.body,
   };
@@ -21,4 +21,4 @@ const send = async (config, message) => {
 
 exports.mailSender = {
   send
-}
+};

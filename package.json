@@ -10,8 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "eslint-config-standard": "^16.0.2",
-    "googleapis": "67.0.0",
+    "eslint-config-standard": "16.0.2",
     "nodemailer": "6.4.17",
     "winston": "3.3.3"
   },

@@ -7,8 +7,9 @@ services:
       - '587:587'
       - '25:25'
     environment:
-      - MAIL_LOGIN
-      - MAIL_PASSWORD
+      - SENDER_MAIL_LOGIN
+      - SENDER_MAIL_PASSWORD
+      - RECEIVER_MAIL
     deploy:
       restart_policy:
         condition: on-failure
